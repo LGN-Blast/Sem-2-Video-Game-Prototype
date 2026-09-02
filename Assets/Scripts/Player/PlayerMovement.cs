@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Movemnent
+    //Movement
     public float movespeed;
     Rigidbody2D rb;
     [HideInInspector]
