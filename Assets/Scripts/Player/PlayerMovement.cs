@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Movement
+    //Movement + Dashing
     public float movespeed;
     Rigidbody2D rb;
     [HideInInspector]
@@ -13,16 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float lastVerticalVector;
     [HideInInspector]
     public Vector2 moveDir;
-    
+    [HideInInspector]
+    public bool isDashing;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         InputManagement();
@@ -30,7 +29,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() //More Suited For Physics calcs (Calls on regular 50 frame intervals)
     {
-        Move();
+        if (!isDashing)
+        {
+            Move();
+        }
+        
     }
 
     void InputManagement()
@@ -56,4 +59,5 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDir.x * movespeed, moveDir.y * movespeed);
     }
+
 }

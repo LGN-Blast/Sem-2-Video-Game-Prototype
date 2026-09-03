@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 39209774}
   - component: {fileID: 39209775}
   - component: {fileID: 39209776}
+  - component: {fileID: 39209777}
+  - component: {fileID: 39209778}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,6 +299,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f728632ce906f9c479531119747c8114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &39209777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39209769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd91569417fc724a957728c16736c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 39209775}
+--- !u!114 &39209778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39209769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1039f83211e33c488b865266acf7798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
 --- !u!1 &75816569 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8539518554700297508, guid: a76815fcc8698b0478c6f08d903a8cf6, type: 3}
@@ -315,6 +344,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 2
+--- !u!114 &75816579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75816569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6c38b1d265cde4ba4b25bd3ea4a8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,17 +5,32 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Animator animator;
-    // Update is called once per frame
+    bool attack = false;
+    public float timeBetweenAttack = 0.5f;
+    float timeSinceAttack;
+
+    
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Attack();
-        }
+        GetInputs();
+        Attack();
+    }
+
+    void GetInputs()
+    {
+        attack = Input.GetKeyDown(KeyCode.Space);
     }
 
     void Attack()
     {
-        animator.SetTrigger("Attack");
+        timeSinceAttack += Time.deltaTime;
+
+        if (attack && timeSinceAttack >= timeBetweenAttack)
+        {
+            timeSinceAttack = 0;
+            animator.SetTrigger("Attack");
+        }
+        
     }
 }
