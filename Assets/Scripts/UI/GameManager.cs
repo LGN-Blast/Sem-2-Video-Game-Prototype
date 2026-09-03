@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
     public enum GameState //Define the different Game States
     {
         GamePlay,
-        Paused,
-        GameOver
+        Paused
     }
 
     public GameState currentState; //store the current state of the game 
@@ -27,17 +26,11 @@ public class GameManager : MonoBehaviour
         switch (currentState) //Behaviour for each state
         {
             case GameState.GamePlay:
-                //code for Gameplay
                 PauseCheck();
                 break;
 
             case GameState.Paused:
-                //Pause Code
                 PauseCheck();
-                break;
-
-            case GameState.GameOver:
-                //Game Over Code
                 break;
 
             default:
