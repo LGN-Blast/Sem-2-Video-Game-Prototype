@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            EnemySpawner.Instance.enemiesAlive--;
             Destroy(gameObject);
         }
     }

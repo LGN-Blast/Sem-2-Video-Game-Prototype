@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner Instance;
+    public int enemiesAlive = 0;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     public GameObject player;
 
     [System.Serializable]
@@ -46,6 +54,8 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(wave.spawnInterval);
             }
 
+            yield return new WaitUntil(() => enemiesAlive <= 0);
+
             currentWaveCount++;
         }
     }
@@ -73,6 +83,7 @@ public class EnemySpawner : MonoBehaviour
 
                 group.spawnCount++;
                 wave.spawnCount++;
+                enemiesAlive++;
             }
         }
     }
