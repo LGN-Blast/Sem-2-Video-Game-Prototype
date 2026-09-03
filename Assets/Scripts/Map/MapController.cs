@@ -23,7 +23,6 @@ public class MapController : MonoBehaviour
 
     Vector3[] neighbourOffsets;
 
-    // Start is called before the first frame update
     void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
@@ -48,7 +47,6 @@ public class MapController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         ChunkChecker();
