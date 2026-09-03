@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,11 +12,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth += amount;
 
-        if (currentHealth <= 0 )
+        if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
         }
     }
-
-
 }
